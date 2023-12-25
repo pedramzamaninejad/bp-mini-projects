@@ -1,9 +1,9 @@
 def tajzie(number):
     avamel = {}
-    for i in range(2, number):
+    for i in range(2, number // 2 + 1):
         reminder = True
         while reminder:
-            if number == 0:
+            if number == 1:
                 return avamel
 
             elif number % i == 0:
