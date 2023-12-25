@@ -1,6 +1,6 @@
 def tajzie(number):
     avamel = {}
-    for i in range(2, int(number ** 1/2) + 1):
+    for i in range(2, number):
         reminder = True
         while reminder:
             if number == 0:
@@ -18,11 +18,7 @@ def tajzie(number):
 
 
 if __name__ == "__main__":
-    from time import time
-
     n = int(input('Please enter a number: '))
-    t1 = time()
     result = tajzie(n)
-    t2 = time()
 
-    print(result, f'time: {t2 - t1}')
+    print(result)
