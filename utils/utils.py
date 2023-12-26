@@ -6,6 +6,15 @@ def factorial(n):
 
 
 def sin(x):
+    result = 0
+    for i in range(1, 21):
+        upper = x ** (2 * i + 1)
+        lower = factorial(2 * i + 1)
+        result = upper / lower
+    return result
+
+
+def sqrt(x):
     ...
 
 
