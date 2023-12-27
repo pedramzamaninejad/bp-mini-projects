@@ -27,13 +27,19 @@ def sin(x):
     return result
 
 
-# def sqrt(x):
-#     """
-#     :param x:
-#     :return: the squere root of X
-#     """
-#
-#     return a
+def sqrt(x):
+    """
+    :param x:
+    :return: the squere root of X
+    """
+    x -= 1
+    result = 0
+    for i in range(21):
+        upper = ((-1) ** i) * factorial(2 * i)
+        lower = (1 - 2 * i) * ((factorial(i)) * 2) * (4 ** i)
+        result += (upper / lower) * (x ** i)
+
+    return result
 
 
 def gcd(n, m):
@@ -52,5 +58,6 @@ if __name__ == '__main__':
     import math
     print(gcd(34, 50) == math.gcd(34, 50))
     print(factorial(5) == math.factorial(5))
-    # print(math.sqrt(10), sqrt(10))
+    print(math.sqrt(10), sqrt(10))
     print(math.sin(math.pi / 4), sin(1/4))
+    print(sin(1/3), sin(0.33), math.sin(pi/3))
