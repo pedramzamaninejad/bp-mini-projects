@@ -15,13 +15,13 @@ def factorial(n):
 # https://www.symbolab.com/solver/taylor-maclaurin-series-calculator/taylor%20%5Csin%28x%29?or=ex
 def sin(x):
     """
-    :param x:
-    :return: the X will be multiplaied by pi number
+    :param x: the X given shoulf be multiplied by pi and then given
+    :return: The sin of X
     """
     result = 0
     for i in range(30):
         a = (-1) ** i
-        b = (pi * x) ** (2 * i + 1)
+        b = (x) ** (2 * i + 1)
         c = factorial(2 * i + 1)
         result += a * (b / c)
     return result
