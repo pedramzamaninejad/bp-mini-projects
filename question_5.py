@@ -1,4 +1,4 @@
-from utils.utils import sin, pi
+from utils.utils import sin, pi, sqrt
 
 
 def polynomial_func(n: int, init: float, *args):
@@ -36,8 +36,8 @@ def integral(start: float, stop: float, part: int, function: str):
         our_interval = []
         while start_x_interval < stop_x_interval:
             # دلیل استفاده از تابع راند نحوه ی کامپایل کردن اعداد اعشاری میباشد
-            our_interval.append([start_x_interval, start_x_interval + h])
-            start_x_interval = start_x_interval + h
+            our_interval.append([start_x_interval, round(start_x_interval + h, 2)])
+            start_x_interval = round(start_x_interval + h, 2)
 
         sum_f_i = 0
         for i in range(len(our_interval)):
@@ -45,6 +45,8 @@ def integral(start: float, stop: float, part: int, function: str):
         result = (h / 2) * sum_f_i
         return result
     else:
+        # دلیل نوشته شدن این if بلاک تفاوت در نحوه ی بازه بنده برای انتگرال سینوس و بقیه اعداد هست
+        # چون در بازه بندی سینوس یک عدد پی هم اضافه خواهد شد که در اینجابه بازه ها این عدد اضافه نمیشود
         h = (stop - start) / part
         start_x_interval = start
         stop_x_interval = stop
@@ -57,9 +59,8 @@ def integral(start: float, stop: float, part: int, function: str):
         sum_f_i = 0
 
         if function.lower() == 'sqrt':
-            f_n = stop ** 0.5
             for i in range(len(our_interval)):
-                sum_f_i += our_interval[i][0] ** 0.5 + our_interval[i][1] ** 0.5
+                sum_f_i += sqrt(our_interval[i][0]) + sqrt(our_interval[i][1])
             result = (h / 2) * sum_f_i
             return result
 
@@ -78,7 +79,7 @@ def integral(start: float, stop: float, part: int, function: str):
 
 
 if __name__ == '__main__':
-    print(integral(0, 1/3, 1000, 'sin'))
+    print(integral(0, 1/3, 10, 'sin'))
     # print(polynomial_func(2, 2, *[2, 3, 2]))
     print(integral(4, 16, 20, 'sqrt'))
     print(integral(4, 32, 30, 'poly'))

@@ -1,6 +1,8 @@
 from question_1 import tajzie
 from question_2 import bast_factorial
 from question_3 import lcm
+from question_9 import get_golden_time
+from question_5 import integral
 
 
 n = input('Choose from 1 to 10 depending of which question you want to answer: ')
@@ -18,3 +20,24 @@ match n:
     case '3':
         x = list(map(int, input('Enter a array of numbers: ').split()))
         print(*x)
+
+    case '4':
+        ...
+
+    case '5':
+        ...
+
+    case '6':
+        ...
+
+    case '7':
+        ...
+
+    case '8':
+        ...
+
+    case '9':
+        ...
+
+    case '10':
+        ...
