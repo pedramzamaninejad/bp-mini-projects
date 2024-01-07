@@ -12,7 +12,7 @@ def find_prependicular(point_one: tuple, point_two: tuple):
     try:
         prependicular_slop = (-1) / ((point_one[1] - point_two[1]) / (point_one[0] - point_two[0]))
     except ZeroDivisionError:
-        # cheking for infinit slop
+        # checking for infinity slop
         if point_one[1] - point_two[1] == 0:
             return ((point_two[0] + point_two[0]) / 2, )
         prependicular_slop = 0
@@ -57,7 +57,7 @@ def impact_prependucular(prependicular1: tuple, prependicular2: tuple):
     """
     :param prependicular1: (m, h) : slop and Width from the origin ; mX + h
     :param prependicular2: (m, h) : slop and Width from the origin ; mX + h
-    :return: The imnpact point of these two lines
+    :return: The impact point of these two lines
     """
     impact_x = ((prependicular2[1] - prependicular1[1]) / (prependicular1[0] - prependicular2[0]))
     impact_y = (prependicular1[0] * impact_x) + prependicular1[1]

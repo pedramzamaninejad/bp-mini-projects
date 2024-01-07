@@ -1,7 +1,8 @@
 # پدرام زمانی نژاد
 from utils.utils import insertion_sort_str
 
-def permutaions(data: list):
+
+def permutations(data: list):
     # تمام حالات با یک حرف
     result = [x for x in data]
     # تمام حالات با دو حرف با ترکیب یک حرفی ها
@@ -37,5 +38,5 @@ def permutaions(data: list):
 
 if __name__ == '__main__':
     a = ['a', 'b', 'c', 'd']
-    c = permutaions(a)
+    c = permutations(a)
     print(len(c) == 64)

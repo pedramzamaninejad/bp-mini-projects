@@ -68,13 +68,13 @@ def integral(start: float, stop: float, part: int, function: str):
         elif function.lower() == 'poly':
 
             degree = int(input('Please enter your polynomial degree: \n'))
-            coeffient = list(map(int, input('Please enter your coeffient of your polynomial function \n'
+            coefficient = list(map(int, input('Please enter your coefficient of your polynomial function \n'
                                             f'It should be exacly {degree + 1} \n'
                                             f'plese seperate your numbers by space between each number: \n').split()))
 
             for i in range(len(our_interval)):
-                sum_f_i += (polynomial_func(degree, our_interval[i][0], *coeffient) + (
-                    polynomial_func(degree, our_interval[i][1], *coeffient)))
+                sum_f_i += (polynomial_func(degree, our_interval[i][0], *coefficient) + (
+                    polynomial_func(degree, our_interval[i][1], *coefficient)))
             result = (h / 2) * sum_f_i
             return result
 
@@ -82,5 +82,5 @@ def integral(start: float, stop: float, part: int, function: str):
 if __name__ == '__main__':
     print(integral(0, 1/3, 10, 'sin'))
     # print(polynomial_func(2, 2, *[2, 3, 2]))
-    print(integral(4, 16, 20, 'sqrt'))
+    print(integral(4, 16, 20, 'hossein') is None)
     print(integral(4, 32, 30, 'poly'))

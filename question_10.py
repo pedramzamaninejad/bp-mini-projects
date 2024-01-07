@@ -16,20 +16,20 @@ def det(data: list):
             temp_data[i].pop(j)
         # رابطه بازگشتی دترمینان n * n
         result += ((-1) ** j) * a0j * det(temp_data)
-    return result
 
-def calc_x(coeffient, answer):
+    return result
+def calc_x(coefficient, answer):
     # پیدا کردن دترمینان ماتریس ضرایب
-    det_of_coeffient = det(coeffient)
+    det_of_coefficient = det(coefficient)
     detan = []
     # ساختن ماتریس  a j با جابجایی ستون j ام با ماتریس جواب ها
     for i in range(len(answer)):
-        temp_co = [x[:] for x in coeffient]
+        temp_co = [x[:] for x in coefficient]
         for j in temp_co:
             j[i] = answer[i]
         try:
-            detan.append(f'x{i} = {det(temp_co) / det_of_coeffient}')
-        # اگر ماتریس ضرایب صفر باشد با این رابطه جوابی پیدا نخواهد شد
+            detan.append(f'x{i} = {det(temp_co) / det_of_coefficient}')
+            # اگر ماتریس ضرایب صفر باشد با این رابطه جوابی پیدا نخواهد شد
         except ZeroDivisionError as e:
             return f'The is no possible answer for this problem\nError: {e}'
     return detan

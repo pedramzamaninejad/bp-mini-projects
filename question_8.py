@@ -1,6 +1,6 @@
 # پدرام زمانی نژاد
 # لطفا در مورد چگونگی حل این سوال حضوری سوال شود توضیح به شدت سخت میباشد
-def prefix_arthmetic_expression(a):
+def prefix_arithmetic_expression(a):
     index = 2
     first_index = 0
     counter = 0
