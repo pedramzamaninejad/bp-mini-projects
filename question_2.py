@@ -1,5 +1,5 @@
+# پدرام زمانی نژاد
 from utils.utils import factorial as fk
-
 
 # اینجا ما بزرگترین فاکتوریلی که کوچکتر از عدد هست را محاسبه میکنیم
 def min_factorial(number):

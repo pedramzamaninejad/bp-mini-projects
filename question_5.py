@@ -1,6 +1,7 @@
+# پدرام زمانی نژاد
 from utils.utils import sin, pi, sqrt
 
-
+# محاسبه کردن یک چند جمله ای برای یک عدد خاص همان پیدا کردن f(n)
 def polynomial_func(n: int, init: float, *args):
     """
 

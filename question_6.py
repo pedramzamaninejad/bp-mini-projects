@@ -1,3 +1,6 @@
+# پدرام زمانی نژاد
+
+
 def find_prependicular(point_one: tuple, point_two: tuple):
     """
     :param point_one: first point ; (x1, y1)

@@ -1,7 +1,8 @@
+# پدرام زمانی نژاد‍
 from question_1 import tajzie
 from question_2 import bast_factorial
 from question_3 import lcm
-from question_9 import get_golden_time
+from question_9 import find_golden_time
 from question_5 import integral
 
 

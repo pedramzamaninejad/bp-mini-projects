@@ -1,5 +1,5 @@
+# پدرام زمانی نژاد
 pi = 3.141592653589793
-
 
 def factorial(n):
     if n == 0 or n == 1:
@@ -80,6 +80,7 @@ def insertion_sort_str(data: list):
         data[i], data[min_index] = data[min_index], data[i]
 
     return data
+
 
 if __name__ == '__main__':
     import math
