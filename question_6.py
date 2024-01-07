@@ -77,16 +77,21 @@ def main_idea(points: list, rectangle: tuple):
     importans_point = impact_prependucular(prependicular[0], prependicular[1])
     impacts = [impact_prependicular_rectangle(rectangle, prependicular[x]) for x in range(len(prependicular))]
     for i in range(len(impacts)):
-        thrid_point = (i + 2) % 3  # نقطه مورد نیازه سوم برای مقایسه فاصله برخورد عمود منصف
+        thrid_point = (i + 2) % len(impacts)  # نقطه مورد نیازه سوم برای مقایسه فاصله برخورد عمود منصف
         for j in range(len(impacts[i])):
+            # مقایسه فاصله نقطه ای که از ان عمود منصف بدست اومده و نقطه ی سوم
             distance1_1 = ((impacts[i][j][0] - points[thrid_point][0]) ** 2 + (impacts[i][j][1] - points[thrid_point][1]) ** 2) ** 0.5
             distance1_2 = ((impacts[i][j][0] - points[i][0]) ** 2 + (impacts[i][j][1] - points[i][1]) ** 2) ** 0.5
             if distance1_1 < distance1_2:
                 impacts[i].pop(j)
                 break
+    all_points = [importans_point, (0, 0), (0, rectangle[1]), (rectangle[0], 0), rectangle]
+    for i in impacts:
+        for j in i:
+            all_points.append(j)
 
-    print(f'important point --> {importans_point}')
-    print(f'Impacts --> {impacts}')
+    print(f'Points --> {all_points}')
+    print(f'میدانستم چگونه نقطه ها رو جدا کنم')
 
 
 if __name__ == '__main__':
