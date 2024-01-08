@@ -111,6 +111,19 @@ while True:
                 break
 
         case '9':
+            n = int(input('\nHow meny sceintists do you want to Enter: \n'))
+            data = []
+            for i in range(n):
+                s = input('Enter the sceintist and birth date and death date like\n'
+                          'pedram 2004 2023\n'
+                          'If the sceintist is not dead yet enter it like\n'
+                          'pedram 2004\n'
+                          'If other than this two options were given the scientist will not be added\n').split()
+                if len(s) == 3:
+                    data.append(s)
+                elif len(s) == 2:
+                    s.append(None)
+                    data.append(s)
             if exit_file():
                 break
 
