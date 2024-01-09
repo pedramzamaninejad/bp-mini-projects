@@ -1,7 +1,8 @@
 # پدرام زمانی نژاد
 from utils.utils import factorial as fk
 
-# اینجا ما بزرگترین فاکتوریلی که کوچکتر از عدد هست را محاسبه میکنیم
+
+# اکتوریلی که کوچکتر از عدد هست را محاسبه میکنیم
 def min_factorial(number):
     i = 1
     while True:
@@ -23,8 +24,10 @@ def bast_factorial(number):
             avamel[f'{current_min_factorial}!'] = number // fk(current_min_factorial)
             number %= fk(current_min_factorial)
             current_min_factorial -= 1
-
-    return avamel
+    answer = ''
+    for k, v in avamel.items():
+        answer += f'({v} * {k}) + '
+    return answer[:-2]
 
 
 if __name__ == '__main__':

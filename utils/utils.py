@@ -38,10 +38,10 @@ def sqrt(x):
     while (N + 1) ** 2 <= x:
         N += 1
     N += 1
-    d = N ** 2 - x
-    result = N - (d / (2 * N))
+    for i in range(5):
+        N = (1 / 2) * (N + (x / N))
 
-    return result
+    return N
 
 
 def gcd(n, m):
@@ -89,6 +89,6 @@ if __name__ == '__main__':
     print(gcd(34, 50) == math.gcd(34, 50))
     print(factorial(5) == math.factorial(5))
     print(math.sqrt(0.1), sqrt(0.1))
-    print(math.sqrt(5), sqrt(5))
+    print(math.sqrt(1023), sqrt(1023))
     print(math.sin(math.pi / 4), sin(1 / 4 * pi))
     print(sin(1 / 3 * pi), sin(0.33 * pi), math.sin(pi / 3))
