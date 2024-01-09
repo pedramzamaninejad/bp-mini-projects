@@ -1,13 +1,12 @@
 # پدرام زمانی نژاد‍
-from question_1 import tajzie
-from question_2 import bast_factorial
-from question_3 import lcm
-from question_5 import integral
-from question_6 import main_idea
-from question_7 import permutations
-from question_8 import prefix_arithmetic_expression
-from question_9 import find_golden_time
-from question_10 import calc_x
+from questions.question_1 import tajzie
+from questions.question_2 import bast_factorial
+from questions.question_3 import lcm
+from questions.question_5 import integral
+from questions.question_6 import main_idea
+from questions.question_7 import permutations
+from questions.question_8 import prefix_arithmetic_expression
+from questions.question_10 import calc_x
 
 
 def exit_file():
@@ -29,7 +28,7 @@ while True:
                                    'Enter your chosen number: '))
                 print(tajzie(number))
             except ValueError:
-                print('\nBad Input Error\n'
+                print('\nBad Isome shienput Error\n'
                       'Try again later')
             if exit_file():
                 break

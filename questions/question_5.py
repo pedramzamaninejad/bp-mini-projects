@@ -1,6 +1,9 @@
 # پدرام زمانی نژاد
 from utils.utils import sin, pi, sqrt
 
+
+# TODO : handeling IE for question 3 pop if there is one input
+# TODO : changing itegral algorithm
 # محاسبه کردن یک چند جمله ای برای یک عدد خاص همان پیدا کردن f(n)
 def polynomial_func(n: int, init: float, *args):
     """
@@ -36,14 +39,16 @@ def integral(start: float, stop: float, part: int, function: str):
         stop_x_interval = stop
         our_interval = []
         while start_x_interval < stop_x_interval:
+            if start_x_interval + h > stop_x_interval:
+                break
             # دلیل استفاده از تابع راند نحوه ی کامپایل کردن اعداد اعشاری میباشد
-            our_interval.append([start_x_interval, round(start_x_interval + h, 2)])
-            start_x_interval = round(start_x_interval + h, 2)
+            our_interval.append([round(start_x_interval, 2), round(start_x_interval + h, 2)])
+            start_x_interval = start_x_interval + h
 
         sum_f_i = 0
-        for i in range(len(our_interval)):
-            sum_f_i += sin(our_interval[i][0]) + sin(our_interval[i][1])
-        result = (h / 2) * sum_f_i
+        for i in range(1, len(our_interval)):
+            sum_f_i += sin(our_interval[i][0])
+        result = (h / 2) * (sin(our_interval[0][0]) + 2 * sum_f_i + sin(our_interval[-1][1]))
         return result
     else:
         # دلیل نوشته شدن این if بلاک تفاوت در نحوه ی بازه بنده برای انتگرال سینوس و بقیه اعداد هست
@@ -54,33 +59,40 @@ def integral(start: float, stop: float, part: int, function: str):
         our_interval = []
         while start_x_interval < stop_x_interval:
             # دلیل استفاده از تابع راند نحوه ی کامپایل کردن اعداد اعشاری میباشد
-            our_interval.append([start_x_interval, start_x_interval + h])
+            if start_x_interval + h > stop_x_interval:
+                break
+            our_interval.append([round(start_x_interval, 2), round(start_x_interval + h, 2)])
             start_x_interval = start_x_interval + h
 
+        print(our_interval)
         sum_f_i = 0
 
         if function.lower() == 'sqrt':
-            for i in range(len(our_interval)):
-                sum_f_i += sqrt(our_interval[i][0]) + sqrt(our_interval[i][1])
-            result = (h / 2) * sum_f_i
+            for i in range(1, len(our_interval)):
+                sum_f_i += sqrt(our_interval[i][0])
+            result = (h / 2) * (sqrt(our_interval[0][0]) + 2 * sum_f_i + sqrt(our_interval[-1][1]))
             return result
 
         elif function.lower() == 'poly':
 
             degree = int(input('Please enter your polynomial degree: \n'))
-            coefficient = list(map(int, input('Please enter your coefficient of your polynomial function \n'
-                                            f'It should be exacly {degree + 1} \n'
-                                            f'plese seperate your numbers by space between each number: \n').split()))
-
-            for i in range(len(our_interval)):
-                sum_f_i += (polynomial_func(degree, our_interval[i][0], *coefficient) + (
-                    polynomial_func(degree, our_interval[i][1], *coefficient)))
-            result = (h / 2) * sum_f_i
+            while True:
+                coefficient = list(map(int, input('Please enter your coefficient of your polynomial function \n'
+                                                  f'It should be exacly {degree + 1} \n'
+                                                  f'plese seperate your numbers by space between each number: \n').split()))
+                if len(coefficient) != degree + 1:
+                    print('Bad coefficient quantity input try again!\n')
+                else:
+                    break
+            for i in range(1, len(our_interval)):
+                sum_f_i += (polynomial_func(degree, our_interval[i][0], *coefficient))
+            result = (h / 2) * (polynomial_func(degree, our_interval[0][0], *coefficient) + 2 * sum_f_i
+                                + (polynomial_func(degree, our_interval[-1][1], *coefficient)))
             return result
 
 
 if __name__ == '__main__':
-    print(integral(0, 1/3, 10, 'sin'))
+    print(integral(0, 1 / 3, 10, 'sin'))
     # print(polynomial_func(2, 2, *[2, 3, 2]))
     print(integral(4, 16, 20, 'hossein') is None)
     print(integral(4, 32, 30, 'poly'))
