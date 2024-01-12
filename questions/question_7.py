@@ -1,4 +1,3 @@
-# پدرام زمانی نژاد
 
 
 def permutations(data: list):

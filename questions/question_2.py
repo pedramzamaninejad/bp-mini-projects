@@ -1,4 +1,3 @@
-# پدرام زمانی نژاد
 from utils.utils import factorial as fk
 
 

@@ -1,4 +1,3 @@
-# پدرام زمانی نژاد
 def prefix_arithmetic_expression(a):
     index = 2
     first_index = 0

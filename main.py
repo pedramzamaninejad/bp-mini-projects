@@ -1,4 +1,3 @@
-# پدرام زمانی نژاد‍
 from questions.question_1 import tajzie
 from questions.question_2 import bast_factorial
 from questions.question_3 import lcm
@@ -6,6 +5,7 @@ from questions.question_5 import integral
 from questions.question_6 import main_idea
 from questions.question_7 import permutations
 from questions.question_8 import prefix_arithmetic_expression
+from questions.question_9 import find_golden_time
 from questions.question_10 import calc_x
 
 
@@ -26,7 +26,7 @@ while True:
             try:
                 number = int(input('\nthis question will show you the Prime factorization of an integer\n '
                                    'Enter your chosen number: '))
-                print(tajzie(number))
+                print(f"tajzie = {tajzie(number)}\n")
             except ValueError:
                 print('\nBad Isome shienput Error\n'
                       'Try again later')
@@ -36,7 +36,7 @@ while True:
             try:
                 number = int(input('\nThis question will show you the show you Factorial Expansion\n'
                                    'Enter your chosen number: '))
-                print(bast_factorial(number))
+                print(f"Cantor expansion = {bast_factorial(number)}\n")
             except ValueError:
                 print('\nBad Input Error\n'
                       'Try again later')
@@ -45,14 +45,18 @@ while True:
         case '3':
             try:
                 x = list(map(int, input('\nEnter a array of numbers: ').split()))
-                print(lcm(*x))
+                if len(x) < 2:
+                    print(f'lcm = {x[0]}\n')
+                else:
+                    print(f'lcm = {lcm(*x)}\n')
             except ValueError:
                 print('\nBad Input Error\n'
                       'Try again later')
             if exit_file():
                 break
         case '4':
-            print('Error 404: question not Found')
+            print('Error 404: question not Found\n'
+                  'unfortunately i couldnt solve this question')
             if exit_file():
                 break
 
@@ -68,7 +72,7 @@ while True:
                     if answer is None:
                         print('\nBad input function chose one of the given one: ')
                         continue
-                    print(answer)
+                    print(f"answer = {answer}")
                     break
             except ValueError:
                 print('\nBad Input with your start - stop - part inputs!\n'
@@ -96,7 +100,7 @@ while True:
         case '7':
             char = input('\nHow meny character do you want to write permutations for ?\n'
                          'Enter them here via separation of one blank space: ').split()
-            print(permutations(char))
+            print(f"permutations are:\n{permutations(char)}")
             if exit_file():
                 break
 
@@ -108,8 +112,7 @@ while True:
             expression = []
             for i in expression_raw:
                 expression.insert(0, i)
-            print(expression)
-            # print(prefix_arithmetic_expression(expression))
+            print(f"The answer of this expression is :\n{prefix_arithmetic_expression(expression)}")
             if exit_file():
                 break
 
@@ -127,6 +130,7 @@ while True:
                 elif len(s) == 2:
                     s.append(None)
                     data.append(s)
+            find_golden_time(data)
             if exit_file():
                 break
 
@@ -148,20 +152,20 @@ while True:
                             counter += 1
                         if exit_file():
                             break
-                answer_matrix = []
                 counter = 1
                 while counter < 11:
-                    rows = list(map(int, input(f'\nEnter the answer matrix with {n} numbers\n'
+                    answer_matrix = list(map(int, input(f'\nEnter the answer matrix with {n} numbers\n'
                                                f'separate with blank space: ').split()))
-                    if len(rows) == n:
-                        coefficient_matrix.append(rows)
+                    if len(answer_matrix) == n:
                         break
                     else:
                         print('\nBad input try again\n'
                               f'You have {10 - counter} try left')
                     if exit_file():
                         break
-                print(calc_x(coefficient_matrix, answer_matrix))
+                print(coefficient_matrix, answer_matrix)
+                print('befor going thoro')
+                print(calc_x(coefficient=coefficient_matrix, answer=answer_matrix))
             except ValueError:
                 print('\nBad input try again late')
 

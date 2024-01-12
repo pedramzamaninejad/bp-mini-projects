@@ -1,8 +1,7 @@
-# پدرام زمانی نژاد
 from utils.utils import insertion_sort
 
 
-#  TODO : Input function, and make an era
+#  TODO : Input function
 
 # این تابع برا پیدا کردن سال ها با بیشترین تعداد دانشمند است
 def golden_time(data: dict):

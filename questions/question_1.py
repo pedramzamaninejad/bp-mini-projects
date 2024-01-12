@@ -1,4 +1,3 @@
-# پدرام زمانی نژاد
 def tajzie(number):
     avamel = {}
     original_num = number

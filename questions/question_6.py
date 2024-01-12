@@ -1,4 +1,3 @@
-# پدرام زمانی نژاد
 
 
 def find_prependicular(point_one: tuple, point_two: tuple):
@@ -18,7 +17,6 @@ def find_prependicular(point_one: tuple, point_two: tuple):
         prependicular_slop = 0
     # عرض از مبدا
     h = mid_y - (prependicular_slop * mid_x)
-    print(prependicular_slop, h)
     return prependicular_slop, h
 
 
@@ -95,8 +93,7 @@ def main_idea(points: list, rectangle: tuple):
             all_points.append(j)
 
     print(f'Points --> {all_points}')
-    print(f'میدانستم چگونه نقطه ها رو جدا کنم')
-
+    print("didn't know how to output the polygon")
 
 if __name__ == '__main__':
     points = [(2, 3), (2, 6), (4, 7)]

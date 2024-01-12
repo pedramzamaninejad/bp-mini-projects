@@ -1,8 +1,7 @@
-# پدرام زمانی نژاد
 def det(data: list):
-    # دترمینان ماتریس ۲ * ۲ که از قبل میدانستیم
-    if len(data) == 2:
-        return (data[0][0] * data[1][1]) - (data[0][1] * data[1][0])
+    # دترمینان ماتریس 1 در 1 که از قبل میدانستیم
+    if len(data) == 1:
+        return data[0][0]
 
     result = 0
     for j in range(len(data)):
