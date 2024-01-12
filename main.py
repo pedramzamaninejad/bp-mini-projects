@@ -101,11 +101,15 @@ while True:
                 break
 
         case '8':
-            expression = input('\nEnter your expression\n'
+            expression_raw = input('\nEnter your expression\n'
                                'Im counting on you that you know how to write these expressions\n'
                                'An example is [* + 2 3 - 9 4]'
                                'Again please separate them with a blank space: ').split()
-            print(prefix_arithmetic_expression(expression))
+            expression = []
+            for i in expression_raw:
+                expression.insert(0, i)
+            print(expression)
+            # print(prefix_arithmetic_expression(expression))
             if exit_file():
                 break
 

@@ -18,6 +18,7 @@ def find_prependicular(point_one: tuple, point_two: tuple):
         prependicular_slop = 0
     # عرض از مبدا
     h = mid_y - (prependicular_slop * mid_x)
+    print(prependicular_slop, h)
     return prependicular_slop, h
 
 

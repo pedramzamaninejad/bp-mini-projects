@@ -1,18 +1,13 @@
 # پدرام زمانی نژاد
-# لطفا در مورد چگونگی حل این سوال حضوری سوال شود توضیح به شدت سخت میباشد
 def prefix_arithmetic_expression(a):
     index = 2
     first_index = 0
-    counter = 0
     while len(a) != 1:
         b = a[index]
         try:
             b = int(b)
-            if counter != 0:
-                index += 1
-                first_index += 1
-                counter = 0
-            continue
+            index += 1
+            first_index += 1
         except ValueError:
             first = int(a.pop(first_index))
             second = int(a.pop(first_index))
@@ -40,7 +35,14 @@ def prefix_arithmetic_expression(a):
                 a.remove('**')
                 temp = second ** first
                 a.insert(first_index, temp)
-            counter = 1
             first_index = 0
             index = 2
     return a[0]
+
+
+if __name__ == '__main__':
+    x = input().split()
+    expression = []
+    for i in x:
+        expression.insert(0, i)
+    prefix_arithmetic_expression(expression)

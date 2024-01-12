@@ -18,15 +18,19 @@ def det(data: list):
         result += ((-1) ** j) * a0j * det(temp_data)
 
     return result
+
+
 def calc_x(coefficient, answer):
     # پیدا کردن دترمینان ماتریس ضرایب
     det_of_coefficient = det(coefficient)
     detan = []
     # ساختن ماتریس  a j با جابجایی ستون j ام با ماتریس جواب ها
+    counter = 0
     for i in range(len(answer)):
         temp_co = [x[:] for x in coefficient]
-        for j in temp_co:
-            j[i] = answer[i]
+        for j in range(len(temp_co)):
+            temp_co[j][counter] = answer[i]
+        counter += 1
         try:
             detan.append(f'x{i} = {det(temp_co) / det_of_coefficient}')
             # اگر ماتریس ضرایب صفر باشد با این رابطه جوابی پیدا نخواهد شد

@@ -1,5 +1,4 @@
 # پدرام زمانی نژاد
-from utils.utils import insertion_sort_str
 
 
 def permutations(data: list):
@@ -21,7 +20,6 @@ def permutations(data: list):
                 temp.remove(r)
             for j in range(len(temp)):
                 result.append(result[i] + temp[j])
-                result.append(temp[j] + result[i])
         # Delete duplicate
         # پیدا کردن تعداد جایگشت ها برای مثال اگر ۴ حرف داشته باشیم و جایگشت های ۳ تایی را بدست اورده باشیم با این
         # قطعه کد میتوانیم تعداد آن جایگشت هارا بدست آورین
@@ -32,7 +30,6 @@ def permutations(data: list):
         perm_count += perm
         counter += 1
 
-    result = insertion_sort_str(list(set(result)))
     return result
 
 
